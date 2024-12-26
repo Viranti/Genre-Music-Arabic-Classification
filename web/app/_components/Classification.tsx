@@ -6,19 +6,16 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
-import { Skeleton } from "@/components/ui/skeleton"
 
-import { Akurasi, Database, Pause, Play, Tags } from "../_components/Svg"
-import Guitar from "../assets/img/image3.jpg"
+import Rectangle from "../assets/img/selection 1.png"
+import Taxi from "../assets/img/taxi 1.png"
+import Swim from "../assets/img/water-sport 1.png"
+import { Akurasi, Database, Pause, Play, Tags } from "./Svg"
 
 import { CircleAlertIcon, LoaderCircleIcon } from "lucide-react"
 
 function LoadingCard() {
-  return (
-    <div className="flex w-full items-center justify-center">
-      <span className="loading loading-infinity loading-md"></span>
-    </div>
-  )
+  return <progress className="progress w-56"></progress>
 }
 
 export type AudioPrediction = {
@@ -33,7 +30,7 @@ export type AudioFile = {
 
 export type Status = "success" | "failed" | "idle"
 
-export default function AudioClassification() {
+export default function Classification() {
   const [isPending, startTransition] = React.useTransition()
   const [prediction, setPrediction] = React.useState<AudioPrediction>()
   const [audioSrc, setAudioSrc] = React.useState<AudioFile>()
@@ -128,57 +125,65 @@ export default function AudioClassification() {
   }, [audioRef.current])
 
   return (
-    <div>
-      <p className="mb-5 text-center text-3xl font-bold text-black">
-        Prediksi
-      </p>
-      <div className="grid md:grid-cols-2 place-items-center gap-4 px-6">
-        <div className="flex h-40 w-full flex-col justify-center gap-5 rounded-xl">
-          <p className="text-slate-500 text-lg md:w-[90%] text-center md:text-start">
-            Bisakah Anda mengenali suara akustik, bass, atau ukulele? Rasakan
-            harmoninya dan tebak jenis gitar dari setiap petikan.
+    <div className="mb-10 px-12">
+      <div className="grid place-items-center px-6 md:grid-cols-2 md:gap-14">
+        {/* Kiri */}
+        <div className="flex w-full flex-col items-start">
+          <p className="text-start text-lg font-bold text-[#5E6282]">
+            Easy and Fast
           </p>
-          <div className="flex gap-2">
-            {/* 1 */}
-            <div className="flex items-center justify-center gap-1 bg-white px-2 py-1 rounded-xl shadow-xl">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#9a70ff] p-2">
-                <Tags />
-              </div>
-              <div>
-                <p className="text-sm font-semibold">3</p>
-                <p className="text-slate-400 text-[12px]">Label Audio</p>
-              </div>
+          <p className="text-2xl font-bold text-[#14183E]">KLASIFIKASI AUDIO</p>
+          {/* 1 */}
+          <div className="mt-5 flex items-center justify-center gap-4">
+            <div className="hidden h-10 w-10 items-center justify-center rounded-lg bg-[#f0bb1f] p-2 md:flex">
+              <Image
+                src={Rectangle}
+                alt="Rectangle"
+              />
             </div>
-            {/* 2 */}
-            <div className="flex items-center justify-center gap-1 bg-white px-2 py-1 rounded-xl shadow-xl">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#ffabde] p-2">
-                <Database />
-              </div>
-              <div>
-                <p className="text-sm font-semibold">1000+</p>
-                <p className="text-slate-400 text-[12px]">Dataset Audio</p>
-              </div>
-            </div>
-            {/* 3 */}
-            <div className="flex items-center justify-center gap-1 bg-white px-2 py-1 rounded-xl shadow-xl">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#fde895] p-2">
-                <Akurasi />
-              </div>
-              <div>
-                <p className="text-sm font-semibold">99%</p>
-                <p className="text-slate-400 text-[12px]">Akurasi Model</p>
-              </div>
+            <div>
+              <p className="font-bold text-[#5E6282]">Choose Data</p>
+              <p className="text-[#5E6282]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
+                tortor tempus.{" "}
+              </p>
             </div>
           </div>
-          {/* <div className="h-full w-full">
-            <Image
-              className="h-full w-full rounded-xl object-cover"
-              src={Guitar}
-              alt=""
-            />
-          </div> */}
+          {/* 2 */}
+          <div className="mt-5 flex items-center justify-center gap-4">
+            <div className="hidden h-10 w-10 items-center justify-center rounded-lg bg-[#006380] p-2 md:flex">
+              <Image
+                src={Swim}
+                alt="Rectangle"
+              />
+            </div>
+            <div>
+              <p className="font-bold text-[#5E6282]">Waiting Prediction</p>
+              <p className="text-[#5E6282]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
+                tortor tempus.{" "}
+              </p>
+            </div>
+          </div>
+          {/* 3 */}
+          <div className="mt-5 flex items-center justify-center gap-4">
+            <div className="hidden h-10 w-10 items-center justify-center rounded-lg bg-[#f15a2b] p-2 md:flex">
+              <Image
+                src={Taxi}
+                alt="Rectangle"
+              />
+            </div>
+            <div>
+              <p className="font-bold text-[#5E6282]">Classification Audio</p>
+              <p className="text-[#5E6282]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
+                tortor tempus.{" "}
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="flex w-full flex-col gap-4">
+        {/* Kanan */}
+        <div className="flex w-full flex-col gap-4 rounded-xl p-4 shadow-xl md:w-[80%] shadow-[#dbedf8]">
           <form
             onSubmit={predict}
             className="flex w-full flex-col gap-3"
@@ -210,7 +215,7 @@ export default function AudioClassification() {
             </div>
             <Button
               type="submit"
-              className="bg-[#d7c6ff] text-black hover:bg-[#d7c6ff]"
+              className="bg-[#fff1da] text-black hover:bg-[#fff1da]"
             >
               {isPending ? (
                 <div className="flex items-center gap-2">
@@ -222,10 +227,10 @@ export default function AudioClassification() {
               )}
             </Button>
           </form>
+          <p className="mt-5 font-semibold">Hasil Klasifikasi Audio</p>
           {status !== "idle" && (
             <>
-              <Separator />
-              <div className="flex w-full items-center gap-4 overflow-hidden rounded-lg border border-border p-4">
+              <div className="flex w-full items-center gap-4 overflow-hidden">
                 {isPending ? (
                   <LoadingCard />
                 ) : (
@@ -239,9 +244,9 @@ export default function AudioClassification() {
                       </div>
                     ) : (
                       <div className="flex flex-col leading-tight">
-                        <p className="text-xs text-muted-foreground">
-                          Suara diprediksi sebagai gitar
-                          <span className="ms-1 font-bold text-black">
+                        <p className="text-muted-foreground text-sm mr-4">
+                          Hasil
+                          <span className="ms-1 font-bold text-black border-l ml-5 pl-4">
                             {prediction.classes}
                           </span>
                         </p>
