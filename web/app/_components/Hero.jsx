@@ -13,7 +13,7 @@ const Hero = () => {
           Klasifikasi <br />
           Genre Music Arabic
         </p>
-        <p className="mt-5 text-[#5E6282] px-4">
+        <p className="mt-5 text-[#5E6282] sm:px-6 md:px-0">
           Website klasifikasi audio ini digunakan untuk mengunggah,
           menganalisis, dan mengklasifikasikan file audio berdasarkan kategori
           atau label data
