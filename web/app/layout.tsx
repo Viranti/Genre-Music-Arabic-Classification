@@ -8,7 +8,7 @@ import fonts from "@/app/font"
 
 
 export const metadata: Metadata = {
-  title: "Gitar Classification",
+  title: "Genre Music Arabic",
   description: "Deep learning project",
 }
 
