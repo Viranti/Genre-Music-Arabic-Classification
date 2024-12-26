@@ -5,25 +5,12 @@ import React from "react"
 import { ThemeToggle } from "@/components/theme/theme-toggle"
 import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import MainSection from "./_components/MainSection"
-import Header from "./_components/Header"
-import Label from "./_components/Label"
-import DeepLearning from "./_components/DeepLearning"
-import Team from "./_components/Team"
-import Footer from "./_components/Footer"
-import Home from "./_components/Home"
 import AudioClassification from "./_components/audio-classification"
 
 export default function Page() {
   return (
     <div className="bg-white h-fit py-4 flex flex-col gap-20">
-      <Header />
-      <MainSection />
-      <DeepLearning />
-      <Label />
-      <AudioClassification />
-      <Team />
-      <Footer />
+      
     </div>
     // <div className="flex h-dvh flex-col items-center justify-center p-4">
     //   <Header />
