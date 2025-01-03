@@ -125,7 +125,7 @@ export default function Classification() {
   }, [audioRef.current])
 
   return (
-    <div className="-mt-24 mb-10 px-12">
+    <div className="mb-10 px-12">
       <div className="grid place-items-center px-6 md:grid-cols-2 md:gap-14">
         {/* Kiri */}
         <div className="flex w-full flex-col items-start">
@@ -242,7 +242,7 @@ export default function Classification() {
                     ) : (
                       <div className="flex w-full  flex-col gap-3">
                         <div className="flex items-center justify-center gap-5">
-                          <p className="w-[30%] w-fit flex-none border-r-2 font-semibold">
+                          <p className="w-[30%] pr-8 w-fit flex-none border-r-2 font-semibold">
                             Label Audio
                           </p>
                           <p className="flex flex-auto items-center justify-center rounded-lg bg-[#f3dc97] py-1 font-semibold text-black">
@@ -250,7 +250,7 @@ export default function Classification() {
                           </p>
                         </div>
                         <div className="flex items-center justify-center gap-5">
-                          <p className="w-[30%] w-fit flex-none border-r-2 font-semibold">
+                          <p className="w-[30%] pr-3 w-fit flex-none border-r-2 font-semibold">
                             Akurasi Model
                           </p>
                           <p className="flex flex-auto items-center justify-center rounded-lg bg-[#f3dc97] py-1 font-semibold text-black">
