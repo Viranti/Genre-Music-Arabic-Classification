@@ -5,8 +5,8 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Separator } from "@/components/ui/separator"
 
+import SC from "../assets/img/sc.png"
 import Rectangle from "../assets/img/selection 1.png"
 import Taxi from "../assets/img/taxi 1.png"
 import Swim from "../assets/img/water-sport 1.png"
@@ -125,7 +125,7 @@ export default function Classification() {
   }, [audioRef.current])
 
   return (
-    <div className="mb-10 px-12">
+    <div className="-mt-24 mb-10 px-12">
       <div className="grid place-items-center px-6 md:grid-cols-2 md:gap-14">
         {/* Kiri */}
         <div className="flex w-full flex-col items-start">
@@ -183,7 +183,7 @@ export default function Classification() {
           </div>
         </div>
         {/* Kanan */}
-        <div className="flex w-full flex-col gap-4 rounded-xl p-4 shadow-xl md:w-[80%] shadow-[#dbedf8]">
+        <div className="flex w-full flex-col gap-4 rounded-xl p-4 shadow-xl shadow-[#dbedf8] md:w-[80%]">
           <form
             onSubmit={predict}
             className="flex w-full flex-col gap-3"
@@ -194,15 +194,13 @@ export default function Classification() {
               </p>
             </div> */}
             <div className="block space-y-1">
-              <Label
-                htmlFor="audio"
-                className="text-muted-foreground"
-              >
-                <span>Upload File Audio</span>
-                <span className="ms-1 rounded bg-secondary px-1 text-xs text-zinc-600 dark:text-zinc-400">
-                  {".wav"}
-                </span>
-              </Label>
+              <div className="mb-5 h-44 w-full overflow-hidden rounded-xl">
+                <Image
+                  src={SC}
+                  alt="Rectangle"
+                  className=";object-cover h-full w-full object-center"
+                />
+              </div>
               <Input
                 type="file"
                 id="audio"
@@ -223,11 +221,10 @@ export default function Classification() {
                   <span>Memprediksi...</span>
                 </div>
               ) : (
-                "Prediksi Suara"
+                <p className="font-bold">KLASIFIKASI AUDIO</p>
               )}
             </Button>
           </form>
-          <p className="mt-5 font-semibold">Hasil Klasifikasi Audio</p>
           {status !== "idle" && (
             <>
               <div className="flex w-full items-center gap-4 overflow-hidden">
@@ -243,16 +240,26 @@ export default function Classification() {
                         </span>
                       </div>
                     ) : (
-                      <div className="flex flex-col leading-tight">
-                        <p className="text-muted-foreground text-sm mr-4">
-                          Hasil
-                          <span className="ms-1 font-bold text-black border-l ml-5 pl-4">
+                      <div className="flex w-full  flex-col gap-3">
+                        <div className="flex items-center justify-center gap-5">
+                          <p className="w-[30%] w-fit flex-none border-r-2 font-semibold">
+                            Label Audio
+                          </p>
+                          <p className="flex flex-auto items-center justify-center rounded-lg bg-[#f3dc97] py-1 font-semibold text-black">
                             {prediction.classes}
-                          </span>
-                        </p>
+                          </p>
+                        </div>
+                        <div className="flex items-center justify-center gap-5">
+                          <p className="w-[30%] w-fit flex-none border-r-2 font-semibold">
+                            Akurasi Model
+                          </p>
+                          <p className="flex flex-auto items-center justify-center rounded-lg bg-[#f3dc97] py-1 font-semibold text-black">
+                            {`${parseFloat(prediction.accuracy) * 100}%`}
+                          </p>
+                        </div>
                       </div>
                     )}
-                    {audioSrc && (
+                    {/* {audioSrc && (
                       <>
                         <audio
                           ref={audioRef}
@@ -267,7 +274,7 @@ export default function Classification() {
                           {isPlay ? <Pause /> : <Play />}
                         </Button>
                       </>
-                    )}
+                    )} */}
                   </>
                 )}
               </div>

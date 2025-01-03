@@ -18,7 +18,7 @@ sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding="utf-8")
 os.environ["PYTHONIOENCODING"] = "utf-8"
 
 # Load the models
-audio_model = load_model("model/Guitar3Label.h5")
+audio_model = load_model("model/ArabicGenre.h5")
 text_model = load_model("model/imdb_sentiment_model.h5")
 
 # Load dependencies
@@ -41,7 +41,7 @@ def predict_sentiment(review: str):
 
 def predict_audio(file_path):
     target_shape = (128, 128)
-    classes = ["Acoustic_Guitar", "Bass_Guitar", "Ukulele"]
+    classes = ["east", "poems", "rai"]
 
     audio_data, sample_rate = librosa.load(file_path, sr=None)
     mel_spectrogram = librosa.feature.melspectrogram(y=audio_data, sr=sample_rate)
