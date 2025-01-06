@@ -125,7 +125,7 @@ export default function Classification() {
   }, [audioRef.current])
 
   return (
-    <div className="mb-10 px-12">
+    <div className="mb-10 px-12 pt-5" id="prediksi">
       <div className="grid place-items-center px-6 md:grid-cols-2 md:gap-14">
         {/* Kiri */}
         <div className="flex w-full flex-col items-start">
@@ -144,8 +144,7 @@ export default function Classification() {
             <div>
               <p className="font-bold text-[#5E6282]">Choose Data</p>
               <p className="text-[#5E6282]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
-                tortor tempus.{" "}
+              Pilih dataset yang akan digunakan untuk proses analisis dan prediksi audio.
               </p>
             </div>
           </div>
@@ -160,8 +159,7 @@ export default function Classification() {
             <div>
               <p className="font-bold text-[#5E6282]">Waiting Prediction</p>
               <p className="text-[#5E6282]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
-                tortor tempus.{" "}
+              Sistem sedang memproses data untuk menghasilkan prediksi audio yang akurat.
               </p>
             </div>
           </div>
@@ -176,8 +174,7 @@ export default function Classification() {
             <div>
               <p className="font-bold text-[#5E6282]">Classification Audio</p>
               <p className="text-[#5E6282]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
-                tortor tempus.{" "}
+              Hasil klasifikasi audio telah selesai. Anda dapat melihat detailnya di sini.
               </p>
             </div>
           </div>

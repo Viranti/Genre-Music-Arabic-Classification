@@ -11,11 +11,11 @@ const Hero = () => {
       <nav className="absolute top-0 right-0 mt-5 mr-5">
         <ul className="flex gap-5">
           <a className="font-bold" href="Home">Home</a>
-          <a className="font-bold" href="Home">Label</a>
-          <a className="font-bold" href="Home">Arsitektur Sistem</a>
-          <a className="font-bold" href="Home">Flowchart</a>
-          <a className="font-bold" href="Home">Prediksi</a>
-          <a className="font-bold" href="Home">Team</a>
+          <a className="font-bold" href="#label">Label</a>
+          <a className="font-bold" href="#arsitektursistem">Arsitektur Sistem</a>
+          <a className="font-bold" href="#flowchart">Flowchart</a>
+          <a className="font-bold" href="#prediksi">Prediksi</a>
+          <a className="font-bold" href="#team">Team</a>
         </ul>
       </nav>
       <div className="text-center sm:ml-20 sm:text-left pt-20">

@@ -8,7 +8,7 @@ import Vira from "../assets/img/vira.png"
 
 const OurTeam = () => {
   return (
-    <div className="relative mb-5 flex flex-col gap-10 px-12">
+    <div className="relative mb-5 flex flex-col gap-10 px-12 pt-5" id="team">
       <Image src={Ornament} className="absolute top-60 left-16 w-14" />
       <p className="text-4xl">Our Team</p>
       <div className="grid grid-cols-2 gap-5">

@@ -8,7 +8,7 @@ import Rai from "../assets/img/Rai.png"
 
 const Genre = () => {
   return (
-    <div className="mb-5 px-6">
+    <div className="mb-5 px-6 pt-5" id="label">
       <p className="text-center text-2xl font-bold">GENRE MUSIC ARABIC</p>
       <div className="mt-20 grid md:grid-cols-3 place-items-center gap-8">
         {/* 1 */}

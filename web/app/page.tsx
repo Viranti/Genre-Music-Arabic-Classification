@@ -11,6 +11,7 @@ import ArsitekturSistem from "./_components/ArsitekturSistems"
 import Flowchart from "./_components/Flowchart"
 import Genre from "./_components/Genre"
 import OurTeam from "./_components/OurTeam"
+import Footer from "./_components/Footer"
 export default function Page() {
   return (
     <div className="bg-white h-fit flex flex-col gap-20">
@@ -20,6 +21,7 @@ export default function Page() {
       <Flowchart />
       <Classification />
       <OurTeam />
+      <Footer />
     </div>
   )
 }
