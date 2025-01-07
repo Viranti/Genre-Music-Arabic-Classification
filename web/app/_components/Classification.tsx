@@ -125,7 +125,10 @@ export default function Classification() {
   }, [audioRef.current])
 
   return (
-    <div className="mb-10 px-12 pt-5" id="prediksi">
+    <div
+      className="mb-10 px-12 pt-5"
+      id="prediksi"
+    >
       <div className="grid place-items-center px-6 md:grid-cols-2 md:gap-14">
         {/* Kiri */}
         <div className="flex w-full flex-col items-start">
@@ -144,7 +147,8 @@ export default function Classification() {
             <div>
               <p className="font-bold text-[#5E6282]">Choose Data</p>
               <p className="text-[#5E6282]">
-              Pilih dataset yang akan digunakan untuk proses analisis dan prediksi audio.
+                Pilih dataset yang akan digunakan untuk proses analisis dan
+                prediksi audio.
               </p>
             </div>
           </div>
@@ -159,7 +163,8 @@ export default function Classification() {
             <div>
               <p className="font-bold text-[#5E6282]">Waiting Prediction</p>
               <p className="text-[#5E6282]">
-              Sistem sedang memproses data untuk menghasilkan prediksi audio yang akurat.
+                Sistem sedang memproses data untuk menghasilkan prediksi audio
+                yang akurat.
               </p>
             </div>
           </div>
@@ -174,7 +179,8 @@ export default function Classification() {
             <div>
               <p className="font-bold text-[#5E6282]">Classification Audio</p>
               <p className="text-[#5E6282]">
-              Hasil klasifikasi audio telah selesai. Anda dapat melihat detailnya di sini.
+                Hasil klasifikasi audio telah selesai. Anda dapat melihat
+                detailnya di sini.
               </p>
             </div>
           </div>
@@ -239,7 +245,7 @@ export default function Classification() {
                     ) : (
                       <div className="flex w-full  flex-col gap-3">
                         <div className="flex items-center justify-center gap-5">
-                          <p className="w-[30%] pr-8 w-fit flex-none border-r-2 font-semibold">
+                          <p className="w-[30%] w-fit flex-none border-r-2 pr-8 font-semibold">
                             Label Audio
                           </p>
                           <p className="flex flex-auto items-center justify-center rounded-lg bg-[#f3dc97] py-1 font-semibold text-black">
@@ -247,12 +253,34 @@ export default function Classification() {
                           </p>
                         </div>
                         <div className="flex items-center justify-center gap-5">
-                          <p className="w-[30%] pr-3 w-fit flex-none border-r-2 font-semibold">
+                          <p className="w-[30%] w-fit flex-none border-r-2 pr-3 font-semibold">
                             Akurasi Model
                           </p>
                           <p className="flex flex-auto items-center justify-center rounded-lg bg-[#f3dc97] py-1 font-semibold text-black">
                             {`${parseFloat(prediction.accuracy) * 100}%`}
                           </p>
+                        </div>
+                        <div className="flex items-center gap-5">
+                          <p className="w-[30%] flex-none pr-3 font-semibold  border-r-2 pr-3">
+                            Tes Audio
+                          </p>
+                          {audioSrc && (
+                            <div className="flex items-center gap-3">
+                              <Button
+                                size="sm"
+                                variant="secondary"
+                                onClick={togglePlayPause}
+                                className="h-8 rounded-full text-xs text-primary"
+                              >
+                                {isPlay ? <Pause /> : <Play />}
+                              </Button>
+                              <audio
+                                ref={audioRef}
+                                src={audioSrc.file}
+                                className="flex-auto"
+                              ></audio>
+                            </div>
+                          )}
                         </div>
                       </div>
                     )}
