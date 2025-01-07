@@ -243,29 +243,34 @@ export default function Classification() {
                         </span>
                       </div>
                     ) : (
-                      <div className="flex w-full  flex-col gap-3">
-                        <div className="flex items-center justify-center gap-5">
-                          <p className="w-[30%] w-fit flex-none border-r-2 pr-8 font-semibold">
+                      <div className="flex w-full flex-col gap-3">
+                        {/* Label Audio */}
+                        <div className="flex items-center gap-5">
+                          <p className="w-[30%] flex-none border-r-2 pr-3 text-left font-semibold">
                             Label Audio
                           </p>
-                          <p className="flex flex-auto items-center justify-center rounded-lg bg-[#f3dc97] py-1 font-semibold text-black">
+                          <p className="flex flex-auto items-center justify-center rounded-lg bg-[#f3dc97] px-3 py-1 font-semibold text-black">
                             {prediction.classes}
                           </p>
                         </div>
-                        <div className="flex items-center justify-center gap-5">
-                          <p className="w-[30%] w-fit flex-none border-r-2 pr-3 font-semibold">
+
+                        {/* Akurasi Model */}
+                        <div className="flex items-center gap-5">
+                          <p className="w-[30%] flex-none border-r-2 pr-3 text-left font-semibold">
                             Akurasi Model
                           </p>
-                          <p className="flex flex-auto items-center justify-center rounded-lg bg-[#f3dc97] py-1 font-semibold text-black">
-                            {`${parseFloat(prediction.accuracy) * 100}%`}
+                          <p className="flex flex-auto items-center justify-center rounded-lg bg-[#f3dc97] px-3 py-1 font-semibold text-black">
+                            {`${(parseFloat(prediction.accuracy) * 100).toFixed(2)}%`}
                           </p>
                         </div>
+
+                        {/* Tes Audio */}
                         <div className="flex items-center gap-5">
-                          <p className="w-[30%] flex-none pr-3 font-semibold  border-r-2 pr-3">
+                          <p className="w-[30%] flex-none border-r-2 pr-3 text-left font-semibold">
                             Tes Audio
                           </p>
                           {audioSrc && (
-                            <div className="flex items-center gap-3">
+                            <div className="flex flex-auto items-center gap-3">
                               <Button
                                 size="sm"
                                 variant="secondary"
