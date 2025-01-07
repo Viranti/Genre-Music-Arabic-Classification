@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-import SC from "../assets/img/sc.png"
+import Arab from "../assets/img/arab2.jpg"
 import Rectangle from "../assets/img/selection 1.png"
 import Taxi from "../assets/img/taxi 1.png"
 import Swim from "../assets/img/water-sport 1.png"
@@ -191,9 +191,9 @@ export default function Classification() {
               </p>
             </div> */}
             <div className="block space-y-1">
-              <div className="mb-5 h-44 w-full overflow-hidden rounded-xl">
+              <div className="mb-5 h-56 w-full overflow-hidden rounded-xl">
                 <Image
-                  src={SC}
+                  src={Arab}
                   alt="Rectangle"
                   className=";object-cover h-full w-full object-center"
                 />
