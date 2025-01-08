@@ -10,7 +10,7 @@ const Hero = () => {
       <Image src={Decoration} className="absolute top-0 left-0 w-40" />
       <nav className="absolute top-0 right-0 mt-5 mr-5">
         <ul className="flex gap-5">
-          <a className="font-bold" href="Home">Home</a>
+          <a className="font-bold" href="#">Home</a>
           <a className="font-bold" href="#label">Label</a>
           <a className="font-bold" href="#arsitektursistem">Arsitektur Sistem</a>
           <a className="font-bold" href="#flowchart">Flowchart</a>
