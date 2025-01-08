@@ -205,7 +205,7 @@ export default function Classification() {
                 />
               </div>
               <Input
-                type="file"
+                type="file" 
                 id="audio"
                 name="audio"
                 accept="audio/wav"
@@ -260,7 +260,7 @@ export default function Classification() {
                             Akurasi Model
                           </p>
                           <p className="flex flex-auto items-center justify-center rounded-lg bg-[#f3dc97] px-3 py-1 font-semibold text-black">
-                            {`${(parseFloat(prediction.accuracy) * 100).toFixed(2)}%`}
+                            {`${(parseFloat(prediction.accuracy) * 100)}%`}
                           </p>
                         </div>
 
